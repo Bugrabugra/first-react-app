@@ -1,0 +1,16 @@
+.list {
+  position: absolute;
+  z-index: 20;
+  left: 12px;
+  top: 90px;
+  bottom: 20px;
+  min-width: 300px;
+  border-radius: 20px;
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 20px;
+  color: #fff;
+}
+
+.list h2 {
+  text-align: center;
+}
