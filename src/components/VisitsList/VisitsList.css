@@ -1,4 +1,4 @@
-.list {
+.visits-list {
   position: absolute;
   z-index: 20;
   left: 12px;
@@ -11,6 +11,11 @@
   color: #fff;
 }
 
-.list h2 {
+.visits-list h2 {
   text-align: center;
+}
+
+.visits-list .list {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
 }

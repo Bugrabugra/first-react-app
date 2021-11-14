@@ -1,19 +1,38 @@
+import "./Visit.css";
+
+
 const Visit = ({coordinates}) => {
   return (
-    <div className="visit">
+    <div>
       {coordinates &&
-      <div className="coordinates">
-        <p>Latitude: {Number(coordinates.lat).toFixed(3)}</p>
-        <p>Longitude: {Number(coordinates.lng).toFixed(3)}</p>
-        <label htmlFor="days">Stayed for: </label>
-        <input id="days" type="number"/> days
-        <label></label>
-        <select>
+      <div className="visit">
+        <div className="coordinates">
+          <p>
+            {`Coordinates: 
+            ${Number(coordinates.lat).toFixed(6)} - 
+            ${Number(coordinates.lng).toFixed(6)}`
+            }
+          </p>
+        </div>
 
-        </select>
-      </div>}
-    </div>
-  );
+        <div className="properties">
+          <div className="days">
+            <label htmlFor="days">Stayed for </label>
+            <input id="days" type="text"/> days
+          </div>
+
+          <div className="purpose">
+            <label>Purpose </label>
+            <select>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      }
+    </div>);
 }
 
 export default Visit;

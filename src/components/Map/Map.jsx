@@ -7,16 +7,9 @@ import {useEffect, useState} from "react";
 const Map = ({passPlace}) => {
   const [map, setMap] = useState(null);
 
-  // const [coordinates, setCoordinates] = useState(null);
-
-  const onClickMap = (e) => {
-    // setCoordinates(e.latlng);
-    passPlace(e.latlng);
-    console.log("Passed");
-  };
-
   useEffect(() => {
-    const map = L.map('map').setView([51.505, -0.09], 13);
+    console.log("Map loaded")
+    const map = L.map('map').setView([ 39.334297, 34.343262], 6);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -25,7 +18,11 @@ const Map = ({passPlace}) => {
     setMap(map);
 
     map.on("click", onClickMap);
-    console.log("Clicked")
+
+    function onClickMap(e) {
+      passPlace(e.latlng);
+      const newMarker = new L.marker(e.latlng).addTo(map);
+    }
   }, []);
 
 

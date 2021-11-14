@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="app">
-      <VisitsList visits={visits}/>
+      <VisitsList visits={visits} onClickVisits={setVisits}/>
       <Map passPlace={setPlace}/>
     </div>
   )
